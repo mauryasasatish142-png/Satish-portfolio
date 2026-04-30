@@ -3,1069 +3,959 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Satish Maurya | MIS Executive | Excel Master | 3D Portfolio</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Satish Maurya - MIS Executive | Data Analytics Expert</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            --excel-green: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-            --excel-blue: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%);
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.15);
-            --shadow-lg: 0 25px 50px rgba(0,0,0,0.25);
-            --shadow-xl: 0 35px 80px rgba(0,0,0,0.35);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111;
+            --accent-pink: #ff4081;
+            --accent-pink-dark: #e91e63;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background: #0a0a15;
-            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
             overflow-x: hidden;
             line-height: 1.6;
         }
 
-        /* Animated Particle Background */
-        #particles {
+        /* Navigation */
+        .navbar {
             position: fixed;
             top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(102,126,234,0.8) 0%, transparent 70%);
-            animation: float 25s infinite linear;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% {
-                transform: translateY(-100vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        /* Floating Navigation */
-        .floating-nav {
-            position: fixed;
-            top: 30px;
-            left: 50%;
-            transform: translateX(-50%);
+            padding: 1rem 5%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
             z-index: 1000;
-            display: flex;
-            gap: 15px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(30px);
-            padding: 15px 30px;
-            border-radius: 50px;
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
         }
 
-        .nav-btn {
-            background: transparent;
-            border: none;
-            color: #fff;
-            padding: 12px 24px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 15px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .nav-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--primary-gradient);
-            transition: left 0.6s;
-            z-index: -1;
-        }
-
-        .nav-btn:hover::before {
-            left: 0;
-        }
-
-        .nav-btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(102,126,234,0.4);
-            color: #fff !important;
-        }
-
-        .nav-btn.active {
-            background: var(--primary-gradient);
-            box-shadow: 0 15px 35px rgba(102,126,234,0.4);
-            transform: translateY(-3px);
-        }
-
-        /* Main Container */
-        .container {
-            min-height: 100vh;
-            padding: 20px;
+        .nav-container {
             max-width: 1400px;
             margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent-pink), #fff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
             position: relative;
+            transition: all 0.3s ease;
         }
 
-        /* Sections */
-        .section {
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--accent-pink);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent-pink);
+        }
+
+        .hamburger {
             display: none;
-            min-height: 100vh;
-            padding: 120px 20px;
-            opacity: 0;
-            transform: translateY(60px);
-            animation: slideInUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
         }
 
-        .section.active {
-            display: block;
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--accent-pink);
+            transition: 0.3s;
         }
 
-        @keyframes slideInUp {
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 64, 129, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 64, 129, 0.08) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.05); }
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            padding: 0 2rem;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: clamp(4.5rem, 12vw, 10rem);
+            font-weight: 900;
+            line-height: 0.9;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--accent-pink) 0%, #fff 70%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: titleFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes titleFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.4rem, 4vw, 2.5rem);
+            font-weight: 300;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            animation: fadeInUp 1.5s ease 0.5s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1.5s ease 1s both;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-pink-dark));
+            color: #000;
+            box-shadow: 0 15px 35px rgba(255, 64, 129, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--accent-pink);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(255, 64, 129, 0.6);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-pink);
+            color: #000;
+            transform: translateY(-8px);
+        }
+
+        .profile-pic {
+            position: absolute;
+            bottom: 5%;
+            left: 5%;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid var(--accent-pink);
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-pink-dark));
+            animation: profileFloat 4s ease-in-out infinite;
+            box-shadow: 0 20px 60px rgba(255, 64, 129, 0.3);
+        }
+
+        @keyframes profileFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        /* Hero Section - Ultimate 3D Profile */
-        .hero-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            gap: 80px;
-            flex-wrap: wrap;
+        /* Sections */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
         }
 
-        .profile-3d {
-            perspective: 1200px;
-            height: 500px;
-            flex: 1;
-            min-width: 350px;
-        }
-
-        .profile-card-3d {
-            width: 100%;
-            height: 100%;
+        section {
+            padding: 120px 0;
             position: relative;
-            transform-style: preserve-3d;
-            transition: all 1s cubic-bezier(0.23, 1, 0.320, 1);
-            animation: rotate3D 20s infinite linear;
-        }
-
-        @keyframes rotate3D {
-            0% { transform: rotateY(0deg) rotateX(0deg); }
-            100% { transform: rotateY(360deg) rotateX(10deg); }
-        }
-
-        .profile-card-3d:hover {
-            animation-play-state: paused;
-            transform: rotateY(0deg) rotateX(5deg) translateZ(50px);
-        }
-
-        .card-face {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: var(--glass-bg);
-            backdrop-filter: blur(35px);
-            border-radius: 30px;
-            border: 1px solid var(--glass-border);
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-xl);
-            backface-visibility: hidden;
-        }
-
-        .card-front { transform: rotateY(0deg); }
-        .card-back { transform: rotateY(180deg); }
-
-        .profile-img {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            margin-bottom: 25px;
-            border: 5px solid transparent;
-            background: linear-gradient(45deg, var(--primary-gradient)) border-box;
-            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-            box-shadow: 0 0 40px rgba(102,126,234,0.6);
-            animation: pulseGlow 2s ease-in-out infinite;
-        }
-
-        @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 40px rgba(102,126,234,0.6); }
-            50% { box-shadow: 0 0 60px rgba(102,126,234,1); }
-        }
-
-        .hero-text {
-            flex: 1;
-            min-width: 400px;
-        }
-
-        .hero-name {
-            font-family: 'Poppins', sans-serif;
-            font-size: clamp(3rem, 8vw, 5rem);
-            font-weight: 800;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 20px;
-            text-shadow: 0 0 50px rgba(102,126,234,0.5);
-            animation: textGlow 3s ease-in-out infinite alternate;
-        }
-
-        @keyframes textGlow {
-            from { filter: drop-shadow(0 0 20px rgba(102,126,234,0.5)); }
-            to { filter: drop-shadow(0 0 40px rgba(102,126,234,0.8)); }
-        }
-
-        .hero-title {
-            font-size: 1.5rem;
-            color: #a8b2d1;
-            margin-bottom: 40px;
-            font-weight: 500;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .contact-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            padding: 25px;
-            border-radius: 20px;
-            border: 1px solid var(--glass-border);
-            transition: all 0.4s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--primary-gradient);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-
-        .contact-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .contact-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .contact-icon {
-            font-size: 2rem;
-            background: var(--primary-gradient);
-            width: 60px;
-            height: 60px;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 15px;
-        }
-
-        /* Section Headers */
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
         }
 
         .section-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-size: clamp(3.5rem, 8vw, 6rem);
             font-weight: 800;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 5px;
-            background: var(--primary-gradient);
-            border-radius: 3px;
-            box-shadow: 0 0 20px rgba(102,126,234,0.5);
-        }
-
-        /* Career Objective */
-        .objective-card {
-            max-width: 900px;
-            margin: 0 auto;
-            background: var(--glass-bg);
-            backdrop-filter: blur(30px);
-            padding: 60px;
-            border-radius: 30px;
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--shadow-xl);
             text-align: center;
+            margin-bottom: 5rem;
+            background: linear-gradient(135deg, var(--accent-pink), #fff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Portfolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .portfolio-item {
             position: relative;
+            height: 450px;
+            border-radius: 24px;
+            overflow: hidden;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(20px);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
         }
 
-        .objective-card::before {
-            content: '';
+        .portfolio-item:hover {
+            transform: translateY(-25px) scale(1.03);
+            border-color: var(--accent-pink);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.15);
+        }
+
+        .portfolio-overlay {
             position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: var(--primary-gradient);
-            border-radius: 32px;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.5s ease;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.95));
+            padding: 3rem 2rem 2rem;
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
         }
 
-        .objective-card:hover::before {
-            opacity: 1;
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
         }
 
-        .objective-text {
-            font-size: 1.3rem;
+        .portfolio-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-pink);
+            margin-bottom: 1rem;
+        }
+
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.2rem;
             line-height: 1.8;
-            color: #e2e8f0;
         }
 
-        /* Ultimate Timeline */
         .timeline {
-            max-width: 1100px;
-            margin: 0 auto;
             position: relative;
         }
 
         .timeline::before {
             content: '';
             position: absolute;
-            left: 50%;
+            left: 20px;
             top: 0;
             bottom: 0;
             width: 4px;
-            background: linear-gradient(to bottom, transparent, #667eea, #764ba2, transparent);
-            transform: translateX(-50%);
-            border-radius: 2px;
-            animation: lineGlow 3s ease-in-out infinite alternate;
-        }
-
-        @keyframes lineGlow {
-            from { box-shadow: 0 0 20px rgba(102,126,234,0.5); }
-            to { box-shadow: 0 0 40px rgba(102,126,234,0.8); }
+            background: linear-gradient(var(--accent-pink), transparent);
         }
 
         .timeline-item {
-            display: flex;
-            margin: 80px 0;
             position: relative;
-            opacity: 0;
-            transform: translateY(50px);
+            margin-bottom: 3.5rem;
+            padding-left: 60px;
         }
 
-        .timeline-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .timeline-content {
-            width: 45%;
-            background: var(--glass-bg);
-            backdrop-filter: blur(25px);
-            padding: 40px;
-            border-radius: 25px;
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            transition: all 0.5s ease;
-        }
-
-        .timeline-content::before {
-            content: '';
+        .timeline-dot {
             position: absolute;
-            top: 40px;
-            width: 25px;
-            height: 25px;
-            background: var(--primary-gradient);
+            left: 16px;
+            top: 10px;
+            width: 24px;
+            height: 24px;
+            background: var(--accent-pink);
             border-radius: 50%;
-            box-shadow: 0 0 25px rgba(102,126,234,0.8);
+            border: 4px solid var(--bg-primary);
             z-index: 2;
+            transition: transform 0.3s ease;
         }
 
-        .timeline-item:nth-child(odd) .timeline-content::before {
-            right: -52px;
+        .timeline-item:hover .timeline-dot {
+            transform: scale(1.3);
         }
 
-        .timeline-item:nth-child(even) .timeline-content::before {
-            left: -52px;
+        .timeline-content h3 {
+            font-size: 1.5rem;
+            color: var(--accent-pink);
+            margin-bottom: 0.5rem;
         }
 
-        .timeline-content:hover {
-            transform: scale(1.05);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .job-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
-
-        .company {
-            color: #a8b2d1;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
-
-        .timeline-date {
-            color: #667eea;
-            font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 20px;
-        }
-
-        /* Excel Mastery Showcase - Interactive 3D Grid */
-        .excel-mastery {
+        /* Skills */
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
         }
 
-        .excel-master-card {
-            perspective: 1200px;
-            height: 400px;
-        }
-
-        .excel-flip-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            transform-style: preserve-3d;
-            cursor: pointer;
-        }
-
-        .excel-flip-container.flipped {
-            transform: rotateY(180deg);
-        }
-
-        .excel-face {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 25px;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            backface-visibility: hidden;
+        .skill-card {
+            background: var(--glass);
             border: 1px solid var(--glass-border);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .excel-front {
-            background: var(--excel-green);
-        }
-
-        .excel-back {
-            background: var(--excel-blue);
-            transform: rotateY(180deg);
-        }
-
-        .excel-icon {
-            font-size: 4.5rem;
-            margin-bottom: 25px;
-            filter: drop-shadow(0 0 25px currentColor);
+            border-radius: 24px;
+            padding: 3.5rem 2.5rem;
+            backdrop-filter: blur(20px);
             transition: all 0.4s ease;
         }
 
-        .excel-flip-container:hover .excel-icon {
-            transform: scale(1.2) rotate(10deg);
+        .skill-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--accent-pink);
+        }
+
+        .skill-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-pink-dark));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #000;
         }
 
         .skill-title {
             font-size: 1.6rem;
             font-weight: 700;
-            margin-bottom: 15px;
-            color: #fff;
+            color: var(--accent-pink);
         }
 
-        .skill-desc {
-            color: rgba(255,255,255,0.9);
-            font-size: 1rem;
+        .skill-bar {
+            margin-bottom: 2rem;
         }
 
-        .level-badge {
-            margin-top: 20px;
-            padding: 10px 25px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 0.95rem;
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-weight: 500;
         }
 
-        /* Education & Personal - Split Layout */
-        .split-layout {
+        .skill-progress-bg {
+            height: 12px;
+            background: var(--glass);
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+
+        .skill-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-pink), var(--accent-pink-dark));
+            border-radius: 6px;
+            width: 0;
+            transition: width 2.5s ease-out;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            height: 320px;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border: 1px solid var(--glass-border);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.08) rotate(1deg);
+        }
+
+        /* Contact */
+        .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-top: 60px;
+            gap: 6rem;
         }
 
-        @media (max-width: 768px) {
-            .split-layout { grid-template-columns: 1fr; gap: 30px; }
-            .hero-content { flex-direction: column; text-align: center; }
-            .profile-3d { height: 400px; }
-        }
-
-        .detail-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(25px);
-            padding: 50px;
-            border-radius: 30px;
+        .contact-card {
+            background: var(--glass);
             border: 1px solid var(--glass-border);
-            box-shadow: var(--shadow-lg);
-            height: fit-content;
-            transition: all 0.4s ease;
+            border-radius: 24px;
+            padding: 4rem;
+            backdrop-filter: blur(20px);
         }
 
-        .detail-card:hover {
-            transform: translateY(-15px);
-            box-shadow: var(--shadow-xl);
+        .contact-info h3 {
+            color: var(--accent-pink);
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
         }
 
-        .detail-header {
+        .contact-detail {
             display: flex;
             align-items: center;
-            gap: 20px;
-            margin-bottom: 30px;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            transition: all 0.3s ease;
         }
 
-        .detail-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--primary-gradient);
-            border-radius: 20px;
+        .contact-detail:hover {
+            transform: translateX(15px);
+            border: 1px solid var(--accent-pink);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-pink);
+            color: #000;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 10px 30px rgba(102,126,234,0.4);
+            font-size: 1.3rem;
         }
 
-        .detail-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #fff;
+        .form-group {
+            margin-bottom: 2.5rem;
         }
 
-        .detail-list {
-            list-style: none;
-        }
-
-        .detail-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .detail-item:hover {
-            padding-left: 25px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 15px;
-            transform: translateX(10px);
-        }
-
-        .detail-item::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            background: var(--primary-gradient);
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-
-        /* Declaration */
-        .declaration {
-            text-align: center;
-            margin-top: 80px;
-            padding: 50px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(25px);
-            border-radius: 30px;
+        .form-control {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--glass-border);
-            box-shadow: var(--shadow-lg);
+            border-radius: 16px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
         }
 
-        .signature {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-top: 30px;
+        .form-control::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-pink);
+            box-shadow: 0 0 0 4px rgba(255, 64, 129, 0.1);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-primary);
+            padding: 4rem 0 2rem;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
         }
 
         /* Responsive */
-        @media (max-width: 1024px) {
-            .timeline::before { left: 35px; }
-            .timeline-item, .timeline-item:nth-child(even) { 
-                flex-direction: column !important;
-                padding-left: 70px !important;
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
             }
-            .timeline-content { width: 100%; margin: 20px 0; }
-            .timeline-item:nth-child(odd) .timeline-content::before { left: 35px !important; right: auto !important; }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 2rem;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+        }
+
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <!-- Particle System -->
-    <canvas id="particles"></canvas>
-
-    <!-- Floating Navigation -->
-    <nav class="floating-nav">
-        <button class="nav-btn active" onclick="showSection('home')">
-            <i class="fas fa-home"></i> Home
-        </button>
-        <button class="nav-btn" onclick="showSection('objective')">
-            <i class="fas fa-bullseye"></i> Objective
-        </button>
-        <button class="nav-btn" onclick="showSection('experience')">
-            <i class="fas fa-briefcase"></i> Experience
-        </button>
-        <button class="nav-btn" onclick="showSection('skills')">
-            <i class="fas fa-chart-line"></i> Excel Mastery
-        </button>
-        <button class="nav-btn" onclick="showSection('profile')">
-            <i class="fas fa-user"></i> Profile
-        </button>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="logo">SATISH MAURYA</a>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#portfolio" class="nav-link">Work</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </nav>
 
-    <div class="container">
-        <!-- Hero Section -->
-        <section id="home" class="section active">
-            <div class="hero-content">
-                <div class="profile-3d">
-                    <div class="profile-card-3d">
-                        <div class="card-face card-front">
-                            <!-- Profile Photo यहाँ add करें -->
-                            <img src="profile.jpg" alt="Satish Maurya" class="profile-img">
-                            <h2 style="font-size: 1.8rem; margin-top: 20px; font-weight: 600;">MIS Executive</h2>
-                            <p style="color: #a8b2d1; margin-top: 10px;">Excel | MIS | Reports</p>
-                        </div>
-                        <div class="card-face card-back">
-                            <div style="text-align: center;">
-                                <h3 style="font-size: 1.5rem; margin-bottom: 20px;">📞 Contact</h3>
-                                <p style="font-size: 1.1rem; margin-bottom: 15px;">9873768852</p>
-                                <p style="font-size: 1rem; color: #a8b2d1;">mauryasasatish142@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-text">
-                    <h1 class="hero-name">SATISH MAURYA</h1>
-                    <p class="hero-title">Advanced Excel Expert | MIS Executive | Data Analysis Professional</p>
-                    <div class="contact-grid">
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <strong>9873768852</strong>
-                                <p style="color: #a8b2d1; margin: 0; font-size: 0.95rem;">Call Anytime</p>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <strong>mauryasasatish142@gmail.com</strong>
-                                <p style="color: #a8b2d1; margin: 0; font-size: 0.95rem;">Quick Response</p>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <strong>RC-721 Rajeev Nagar<br>Khora Colony, Noida 201301</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">SATISH MAURYA</h1>
+            <p class="hero-subtitle">MIS Executive | Advanced Excel Master | Data Analytics Specialist</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn-primary">
+                    <i class="fas fa-rocket"></i> Hire Me
+                </a>
+                <a href="#portfolio" class="btn-secondary">
+                    <i class="fas fa-briefcase"></i> View Work
+                </a>
             </div>
-        </section>
+        </div>
+        <div class="profile-pic"></div>
+    </section>
 
-        <!-- Career Objective -->
-        <section id="objective" class="section">
-            <div class="section-header">
-                <h2 class="section-title">Career Objective</h2>
-            </div>
-            <div class="objective-card">
-                <div style="font-size: 1.4rem; line-height: 1.9; color: #e2e8f0; max-width: 800px; margin: 0 auto;">
-                    Seeking a career opportunity within the organization where my dedication, hard work, & logical ability will help me to gain a position of substantial responsibility and where I can exploit my full potential.
+    <!-- Portfolio -->
+    <section id="portfolio" class="reveal">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" alt="Cosentus" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">MIS Executive</h3>
+                        <p>Cosentus India Pvt. Ltd. | Sep 2022 - Present<br>Daily/Weekly/Monthly Reports | PowerPoint | MIS Management</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" alt="Netambit" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">MIS Executive</h3>
+                        <p>Netambit Infosource Pvt. Ltd. | Dec 2020 - Jul 2022<br>Advanced Excel | Data Collation | Management Reporting</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1517433456452-f1633a875f6f?w=800&h=600&fit=crop" alt="Excel Projects" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Excel Mastery</h3>
+                        <p>VLOOKUP | Pivot Tables | Macros | SUMIFS | COUNTIFS<br>Conditional Formatting | Automated Reports</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop" alt="Management Reports" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Management Analytics</h3>
+                        <p>Day End Reports | Higher Management Presentations<br>Cross-Department Coordination | Query Resolution</p>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Professional Experience -->
-        <section id="experience" class="section">
-            <div class="section-header">
-                <h2 class="section-title">Professional Experience</h2>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3 class="job-title">MIS Executive</h3>
-                        <div class="company">Cosentus India Pvt. Ltd.</div>
-                        <div class="timeline-date">📅 Sep 2022 - Present (2+ Years)</div>
-                        <ul style="margin-top: 25px; padding-left: 25px; color: #e2e8f0;">
-                            <li>✅ Prepare Daily, Weekly, Monthly Reports</li>
-                            <li>✅ Day End Report Preparation for Management</li>
-                            <li>✅ Managing all MIS activities of the process</li>
-                            <li>✅ PowerPoint Presentations as required</li>
-                            <li>✅ Coordinate with process managers</li>
-                        </ul>
+    <!-- About -->
+    <section id="about" class="reveal" style="background: rgba(17,17,17,0.5);">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3 style="font-size: 2.2rem; color: var(--accent-pink); margin-bottom: 2rem;">Career Objective</h3>
+                    <p style="font-size: 1.25rem; line-height: 1.8;">Seeking a career opportunity within the organization where my dedication, hard work, & logical ability will help me to gain a position of substantial responsibility and where I can exploit my full potential.</p>
+                    <br>
+                    <p><strong>3+ Years Experience</strong> as MIS Executive with expertise in Advanced Excel, Data Management, and Business Intelligence. Proven track record of delivering actionable insights to higher management.</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>MIS Executive</h3>
+                            <p><strong>Cosentus India Pvt. Ltd.</strong><br>12 Sep 2022 - Present</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>MIS Executive</h3>
+                            <p><strong>Netambit Infosource Pvt. Ltd.</strong><br>23 Dec 2020 - 7 Jul 2022</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>B.Com</h3>
+                            <p><strong>Delhi University</strong></p>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3 class="job-title">MIS Executive</h3>
-                        <div class="company">Netambit Infosource Pvt. Ltd.</div>
-                        <div class="timeline-date">📅 Dec 2020 - Jul 2022 (1.5+ Years)</div>
-                        <ul style="margin-top: 25px; padding-left: 25px; color: #e2e8f0;">
-                            <li>✅ Primary MIS Responsibilities</li>
-                            <li>✅ Timely query resolution</li>
-                            <li>✅ Data collation & reporting</li>
-                            <li>✅ Build & maintain reports</li>
-                            <li>✅ Work independently with minimum direction</li>
-                        </ul>
-                    </div>
-                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Excel Mastery -->
-        <section id="skills" class="section">
-            <div class="section-header">
-                <h2 class="section-title">Excel Mastery</h2>
-                <p style="text-align: center; font-size: 1.3rem; color: #a8b2d1; margin-top: 20px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                    Advanced Excel Functions | MIS Reports | Data Visualization | Automation
-                </p>
-            </div>
-            <div class="excel-mastery">
-                <div class="excel-master-card">
-                    <div class="excel-flip-container" onclick="this.classList.toggle('flipped')">
-                        <div class="excel-face excel-front">
-                            <i class="fab fa-microsoft-excel excel-icon"></i>
-                            <h3 class="skill-title">VLOOKUP / HLOOKUP</h3>
-                            <p class="skill-desc">Advanced data retrieval across sheets</p>
+    <!-- Skills -->
+    <section id="skills" class="reveal">
+        <div class="container">
+            <h2 class="section-title">Core Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-file-excel"></i>
                         </div>
-                        <div class="excel-face excel-back">
-                            <i class="fas fa-bolt"></i>
-                            <div class="level-badge">👑 EXPERT</div>
-                            <p style="margin-top: 15px;">Dynamic lookups with INDEX-MATCH</p>
+                        <h3 class="skill-title">Excel Advanced</h3>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-label">
+                            <span>Pivot Tables & VLOOKUP</span>
+                            <span>98%</span>
+                        </div>
+                        <div class="skill-progress-bg">
+                            <div class="skill-progress-fill" data-width="98%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-label">
+                            <span>SUMIFS / COUNTIFS</span>
+                            <span>97%</span>
+                        </div>
+                        <div class="skill-progress-bg">
+                            <div class="skill-progress-fill" data-width="97%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-label">
+                            <span>Macros & VBA</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-progress-bg">
+                            <div class="skill-progress-fill" data-width="95%"></div>
                         </div>
                     </div>
                 </div>
-                <div class="excel-master-card">
-                    <div class="excel-flip-container" onclick="this.classList.toggle('flipped')">
-                        <div class="excel-face excel-front">
-                            <i class="fas fa-table-cells excel-icon"></i>
-                            <h3 class="skill-title">Pivot Tables</h3>
-                            <p class="skill-desc">Data analysis & summarization</p>
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-chart-bar"></i>
                         </div>
-                        <div class="excel-face excel-back">
-                            <i class="fas fa-chart-pie"></i>
-                            <div class="level-badge">👑 EXPERT</div>
-                            <p style="margin-top: 15px;">Multi-level grouping & slicers</p>
+                        <h3 class="skill-title">MIS Reporting</h3>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-label">
+                            <span>MIS Reports</span>
+                            <span>97%</span>
+                        </div>
+                        <div class="skill-progress-bg">
+                            <div class="skill-progress-fill" data-width="97%"></div>
                         </div>
                     </div>
-                </div>
-                <div class="excel-master-card">
-                    <div class="excel-flip-container" onclick="this.classList.toggle('flipped')">
-                        <div class="excel-face excel-front">
-                            <i class="fas fa-robot excel-icon"></i>
-                            <h3 class="skill-title">Macros & VBA</h3>
-                            <p class="skill-desc">Process automation</p>
+                    <div class="skill-bar">
+                        <div class="skill-label">
+                            <span>PowerPoint</span>
+                            <span>96%</span>
                         </div>
-                        <div class="excel-face excel-back">
-                            <i class="fas fa-code"></i>
-                            <div class="level-badge">⚡ ADVANCED</div>
-                            <p style="margin-top: 15px;">Custom functions & automation</p>
+                        <div class="skill-progress-bg">
+                            <div class="skill-progress-fill" data-width="96%"></div>
                         </div>
                     </div>
-                </div>
-                <div class="excel-master-card">
-                    <div class="excel-flip-container" onclick="this.classList.toggle('flipped')">
-                        <div class="excel-face excel-front">
-                            <i class="fas fa-calculator excel-icon"></i>
-                            <h3 class="skill-title">SUMIFS / COUNTIFS</h3>
-                            <p class="skill-desc">Conditional calculations</p>
+                    <div class="skill-bar">
+                        <div class="skill-label">
+                            <span>Google Sheets</span>
+                            <span>94%</span>
                         </div>
-                        <div class="excel-face excel-back">
-                            <i class="fas fa-equals"></i>
-                            <div class="level-badge">👑 EXPERT</div>
-                            <p style="margin-top: 15px;">Multi-criteria analysis</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="excel-master-card">
-                    <div class="excel-flip-container" onclick="this.classList.toggle('flipped')">
-                        <div class="excel-face excel-front">
-                            <i class="fas fa-palette excel-icon"></i>
-                            <h3 class="skill-title">Conditional Formatting</h3>
-                            <p class="skill-desc">Data visualization</p>
-                        </div>
-                        <div class="excel-face excel-back">
-                            <i class="fas fa-paint-brush"></i>
-                            <div class="level-badge">⚡ ADVANCED</div>
-                            <p style="margin-top: 15px;">Dynamic rules & highlighting</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="excel-master-card">
-                    <div class="excel-flip-container" onclick="this.classList.toggle('flipped')">
-                        <div class="excel-face excel-front">
-                            <i class="fab fa-google-sheets excel-icon"></i>
-                            <h3 class="skill-title">Google Sheets</h3>
-                            <p class="skill-desc">Cloud collaboration</p>
-                        </div>
-                        <div class="excel-face excel-back">
-                            <i class="fas fa-cloud"></i>
-                            <div class="level-badge">📊 PROFICIENT</div>
-                            <p style="margin-top: 15px;">Apps Script & real-time data</p>
+                        <div class="skill-progress-bg">
+                            <div class="skill-progress-fill" data-width="94%"></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Profile Section -->
-        <section id="profile" class="section">
-            <div class="section-header">
-                <h2 class="section-title">Qualification & Personal Profile</h2>
+    <!-- Gallery -->
+    <section id="gallery" class="reveal" style="background: rgba(17,17,17,0.5);">
+        <div class="container">
+            <h2 class="section-title">Data Visualizations</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background: linear-gradient(135deg, var(--accent-pink), #ff77a8);"></div>
+                <div class="gallery-item" style="background: linear-gradient(135deg, #667eea, #764ba2);"></div>
+                <div class="gallery-item" style="background: linear-gradient(135deg, #f093fb, #f5576c);"></div>
+                <div class="gallery-item" style="background: linear-gradient(135deg, #4facfe, #00f2fe);"></div>
+                <div class="gallery-item" style="background: linear-gradient(135deg, #43e97b, #38f9d7);"></div>
+                <div class="gallery-item" style="background: linear-gradient(135deg, #fa709a, #fee140);"></div>
             </div>
-            <div class="split-layout">
-                <div class="detail-card">
-                    <div class="detail-header">
-                        <div class="detail-icon">
-                            <i class="fas fa-graduation-cap"></i>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="reveal">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Reach Out</h3>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
                         </div>
-                        <h3 class="detail-title">Academic Qualification</h3>
-                    </div>
-                    <ul class="detail-list">
-                        <li>
-                            <div>B.Com Degree</div>
-                            <div style="margin-left: auto; color: #a8b2d1;">Delhi University</div>
-                        </li>
-                        <li>
-                            <div>12th Standard</div>
-                            <div style="margin-left: auto; color: #a8b2d1;">CBSE Delhi, 2015</div>
-                        </li>
-                        <li>
-                            <div>10th Standard</div>
-                            <div style="margin-left: auto; color: #a8b2d1;">CBSE Delhi, 2013</div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="detail-card">
-                    <div class="detail-header">
-                        <div class="detail-icon" style="background: var(--excel-green);">
-                            <i class="fas fa-user-tie"></i>
+                        <div>
+                            <h4>Mobile</h4>
+                            <p><a href="tel:+919873768852" style="color: inherit;">9873768852</a></p>
                         </div>
-                        <h3 class="detail-title">Personal Details</h3>
                     </div>
-                    <ul class="detail-list">
-                        <li>
-                            <div>Father's Name</div>
-                            <div style="margin-left: auto; color: #a8b2d1;">Mr. Ishwardeen Maurya</div>
-                        </li>
-                        <li>
-                            <div>Date of Birth</div>
-                            <div style="margin-left: auto; color: #a8b2d1;">15th Dec 1996 (27 Years)</div>
-                        </li>
-                        <li>
-                            <div>Marital Status</div>
-                            <div style="margin-left: auto; color: #a8b2d1;">Unmarried</div>
-                        </li>
-                        <li>
-                            <div>Nationality</div>
-                            <div style="margin-left: auto; color: #a8b2d1;">Indian</div>
-                        </li>
-                        <li>
-                            <div>Languages</div>
-                            <div style="margin-left: auto; color: #a8b2d1;">English & Hindi</div>
-                        </li>
-                    </ul>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:mauryasasatish142@gmail.com" style="color: inherit;">mauryasasatish142@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>RC-721 Rajeev Nagar<br>Khora Colony, Noida 201301</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-calendar-day"></i>
+                        </div>
+                        <div>
+                            <h4>Personal</h4>
+                            <p>Born: 15 Dec 1996 | Unmarried<br>English & Hindi | Indian</p>
+                        </div>
+                    </div>
                 </div>
+                <form class="contact-card">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="6" placeholder="Tell me about the opportunity..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+                </form>
             </div>
-            <div class="declaration">
-                <h3 style="font-size: 1.8rem; margin-bottom: 25px; color: #e2e8f0;">
-                    <i class="fas fa-file-signature"></i> Declaration
-                </h3>
-                <p style="font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto 40px;">
-                    The entire particulars given by me are true to the best of my knowledge.
-                </p>
-                <div class="signature">SATISH MAURYA</div>
-            </div>
-        </section>
-    </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p style="font-size: 1.1rem;">© 2024 Satish Maurya. All particulars are true to the best of my knowledge.</p>
+            <p style="opacity: 0.8; margin-top: 0.5rem;">RC-721 Rajeev Nagar, Khora Colony, Noida 201301</p>
+        </div>
+    </footer>
 
     <script>
-        // Navigation
-        function showSection(sectionId) {
-            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-            document.getElementById(sectionId).classList.add('active');
-            
-            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.closest('.nav-btn').classList.add('active');
-            
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            navbar.style.background = window.scrollY > 50 ? 'rgba(10,10,10,0.98)' : 'rgba(10,10,10,0.95)';
+        });
 
-        // Advanced Particle System
-        function initParticles() {
-            const canvas = document.getElementById('particles');
-            const ctx = canvas.getContext('2d');
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-
-            const particles = [];
-            for (let i = 0; i < 80; i++) {
-                particles.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height - canvas.height,
-                    size: Math.random() * 4 + 1,
-                    speed: Math.random() * 0.5 + 0.2,
-                    rotation: Math.random() * 360,
-                    rotSpeed: Math.random() * 2 - 1
-                });
-            }
-
-            function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                
-                particles.forEach(p => {
-                    p.y += p.speed;
-                    p.rotation += p.rotSpeed;
-                    
-                    if (p.y > canvas.height) {
-                        p.y = -p.size;
-                        p.x = Math.random() * canvas.width;
-                    }
-                    
-                    ctx.save();
-                    ctx.translate(p.x, p.y);
-                    ctx.rotate(p.rotation * Math.PI / 180);
-                    ctx.fillStyle = `rgba(102, 126, 234, ${0.8 - p.y / canvas.height})`;
-                    ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
-                    ctx.restore();
-                });
-                
-                requestAnimationFrame(animate);
-            }
-            animate();
-
-            window.addEventListener('resize', () => {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            });
-        }
-
-        // Scroll Animations
-        function handleScroll() {
-            const elements = document.querySelectorAll('.timeline-item, .excel-master-card, .detail-card');
-            elements.forEach((el, index) => {
-                const rect = el.getBoundingClientRect();
-                if (rect.top < window.innerHeight - 100) {
-                    setTimeout(() => el.style.opacity = '1', index * 150);
-                    el.style.transform = 'translateY(0)';
+        // Active nav link
+        const navLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop - 200;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
                 }
             });
-        }
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
 
-        // Mouse Follow Effect
-        document.addEventListener('mousemove', (e) => {
-            const profileCard = document.querySelector('.profile-card-3d');
-            if (profileCard) {
-                const rect = profileCard.getBoundingClientRect();
+        // Scroll reveal animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('active');
+                        
+                        // Animate skill bars
+                        const skillBars = entry.target.querySelectorAll('.skill-progress-fill');
+                        skillBars.forEach((bar, i) => {
+                            setTimeout(() => {
+                                bar.style.width = bar.dataset.width;
+                            }, i * 150);
+                        });
+                    }, index * 200);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(anchor.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', e => {
+            e.preventDefault();
+            alert('🎉 Thank you! Your message is sent. I\'ll respond within 24 hours.');
+            e.target.reset();
+        });
+
+        // Mouse follow portfolio effect
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            item.addEventListener('mousemove', e => {
+                const rect = item.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = (y - centerY) / 10;
-                const rotateY = (centerX - x) / 10;
-                profileCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px)`;
-            }
-        });
-
-        // Initialize
-        window.addEventListener('load', () => {
-            initParticles();
-            handleScroll();
-        });
-        window.addEventListener('scroll', handleScroll);
-
-        // Auto-flip reset
-        document.querySelectorAll('.excel-flip-container').forEach(container => {
-            container.addEventListener('mouseleave', () => {
-                setTimeout(() => container.classList.remove('flipped'), 200);
+                item.style.setProperty('--mouse-x', `${x}px`);
+                item.style.setProperty('--mouse-y', `${y}px`);
             });
         });
     </script>
